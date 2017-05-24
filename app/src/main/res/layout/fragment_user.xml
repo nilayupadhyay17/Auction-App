@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.com.upadhyay.nilay.myapplication.PlaceBid">
+    <ImageView
+        android:id="@+id/iv_Userbackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="25dp"
+        android:hint="Enter your Username"
+        android:textColorHint="@android:color/white"
+        android:maxLength="9"
+        android:textColor="@android:color/white"
+        />
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="84dp"
+    android:id="@+id/radioTrader"
+        android:layout_below="@id/editUsername">
+    <RadioButton android:id="@+id/driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver"
+        android:textColor="@android:color/white"/>
+    <RadioButton android:id="@+id/passenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passenger"
+        android:textColor="@android:color/white"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/buttonUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="@dimen/btn_add_font_size"
+        android:background="@drawable/bg_btn_add_it"
+        android:paddingLeft="@dimen/vertical_padding"
+        android:paddingRight="@dimen/vertical_padding"
+        android:paddingTop="@dimen/horizontal_padding"
+        android:paddingBottom="@dimen/horizontal_padding"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/btn_add_color"
+        android:text="Register"
+        android:layout_below="@id/radioTrader"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
+

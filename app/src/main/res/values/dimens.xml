@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="btn_add_it_corner_radius_purple">2dp</dimen>
+    <dimen name="btn_add_it_radius_green">2dp</dimen>
+    <dimen name="iv_logo_size">192dp</dimen>
+    <dimen name="logo_margin">84dp</dimen>
+    <dimen name="vertical_padding">60dp</dimen>
+    <dimen name="horizontal_padding">8dp</dimen>
+    <dimen name="btn_add_margin">24dp</dimen>
+    <dimen name="btn_add_font_size">28sp</dimen>
+    <dimen name="tv_title_vertical_margin">36dp</dimen>
+    <dimen name="tv_title_font_size">18sp</dimen>
+    <dimen name="row_drop_padding">22dp</dimen>
+    <dimen name="iv_drop_size">12dp</dimen>
+    <dimen name="tv_what_horizontal_padding">22dp</dimen>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "302040009762",
+    "firebase_url": "https://fir-message-dd081.firebaseio.com",
+    "project_id": "fir-message-dd081",
+    "storage_bucket": "fir-message-dd081.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302040009762:android:0c151d617216b540",
+        "android_client_info": {
+          "package_name": "app.com.upadhyay.nilay.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302040009762-n3dlqo7lrfrj7qf639d1hb9lnijufpfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIqV_19zUHB4T10rk10Ah8xOO50c5r-7Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302040009762-n3dlqo7lrfrj7qf639d1hb9lnijufpfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

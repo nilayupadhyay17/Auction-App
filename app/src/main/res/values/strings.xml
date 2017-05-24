@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="submit">Submit</string>
+    <string name="topText">Top</string>
+    <string name="bottumText">Bottum</string>
+    <string name="placeBid">Place Bid</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="items">
+        <item>Facebook</item>
+        <item>Google Plus</item>
+        <item>Youtube</item>
+        <item>Twitter</item>
+    </string-array>
+    <string-array name="country_names">
+        <item>Germany</item>
+        <item>India</item>
+        <item>Italy</item>
+        <item>Norway</item>
+        <item>Pakistan</item>
+        <item>Philli</item>
+        <item>Saudi</item>
+        <item>United States</item>
+        <item>United States</item>
+        <item>United States</item>
+    </string-array>
+
+</resources>
