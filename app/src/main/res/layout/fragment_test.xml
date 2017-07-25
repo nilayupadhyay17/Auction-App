@@ -3,12 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="app.com.upadhyay.nilay.myapplication.PlaceBid">
+    tools:context="app.com.upadhyay.nilay.myapplication.UserInterface.PlaceBid">
 
     <ImageView
         android:id="@+id/iv_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/Hurryup"
+        android:text="Hurry Up!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginRight="84dp"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        />
+    <TextView
+        android:id="@+id/TimeLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Hurryup"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginRight="84dp"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        />
+
     <EditText
         android:id="@+id/editTextBid"
         android:layout_width="match_parent"
@@ -16,11 +39,13 @@
         android:inputType="number"
         android:layout_marginLeft="84dp"
         android:layout_marginRight="84dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="30dp"
         android:hint="Enter the Bid"
         android:textColorHint="@android:color/white"
         android:maxLength="9"
         android:textColor="@android:color/white"
+        android:layout_below="@id/TimeLeft"
+        android:maxLines="1"
         />
     <EditText
         android:id="@+id/Pickup"
@@ -32,7 +57,8 @@
         android:layout_marginTop="30dp"
         android:hint="Enter pickup Location"
         android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:maxLines="1"/>
     <EditText
         android:id="@+id/Drop"
         android:layout_below="@id/Pickup"
@@ -43,7 +69,8 @@
         android:layout_marginTop="30dp"
         android:hint="Where to?"
         android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:maxLines="1"/>
     <Button
         android:id="@+id/buttonPlaceBid"
         android:layout_below="@id/Drop"
@@ -62,60 +89,5 @@
         android:text="@string/placeBid"
         android:layout_centerHorizontal="true"
         />
-    <TextView
-        android:text="Auction Details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:id="@+id/AuctionDetails"
-        android:textColor="@android:color/white"
-        android:textSize="30dp"/>
-    <View
-        android:id="@+id/line"
-        android:layout_below="@id/AuctionDetails"
-        android:layout_width="fill_parent"
-        android:layout_height="3dp"
-        android:background="@android:color/white"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:layout_marginTop="20dp"
-        android:id="@+id/ID"
-        android:textColor="@android:color/white"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:textSize="18dp"/>
-    <TextView
-        android:id="@+id/TimeLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ID"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:textColor="@android:color/white"
-        android:textSize="18dp"
-         />
-    <View
-        android:id="@+id/line1"
-        android:layout_below="@id/TimeLeft"
-        android:layout_marginTop="50dp"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/white"/>
-    <TextView
-        android:id="@+id/Hurryup"
-        android:text="Hurry Up!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line1"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:textColor="@android:color/white"
-        android:textSize="24dp"
-        />
+
 </RelativeLayout>

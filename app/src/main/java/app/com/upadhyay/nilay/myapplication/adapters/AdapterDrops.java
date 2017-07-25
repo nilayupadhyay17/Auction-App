@@ -2,8 +2,6 @@ package app.com.upadhyay.nilay.myapplication.adapters;
 
 
 import android.content.Context;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import app.com.upadhyay.nilay.myapplication.PlaceBid;
 import app.com.upadhyay.nilay.myapplication.R;
 import app.com.upadhyay.nilay.myapplication.beans.AuctionDetail;
 import io.realm.RealmResults;
@@ -38,13 +33,6 @@ public class AdapterDrops extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void update(RealmResults<AuctionDetail> results){
         mResults = results;
     }
-    public static ArrayList<String> generateValues(){
-        ArrayList<String> dummyValues = new ArrayList<String>();
-        for(int i=0;i<101;i++){
-            dummyValues.add("item"+i);
-        }
-        return  dummyValues;
-    }
     @Override
     public int getItemViewType(int position) {
         if(mResults == null ||position<mResults.size()){
@@ -61,13 +49,10 @@ public class AdapterDrops extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-       // holder.mTextWhat.setText(mitems.get(position));
         if(holder instanceof  DropHolder) {
             DropHolder dropHolder  = (DropHolder)holder;
             AuctionDetail ad = mResults.get(position);
-            //Log.e("starttime", String.valueOf(ad.getStartTime()));
-            dropHolder.mTextWhat.setText(ad.getId().toString());
-           // dropHolder.mTextWhen.setText(ad.getStartTime().toString());
+            dropHolder.mTextWhat.setText(ad.getName().toString());
         }
     }
     @Override
@@ -88,9 +73,7 @@ public class AdapterDrops extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
         @Override
         public void onClick(View v) {
-            Log.e("ad","onclick");
             if(clickListener != null){
-                Log.e("ad1","onclick");
                 clickListener.itemClicked(v,getPosition());
             }
         }

@@ -3,43 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="app.com.upadhyay.nilay.myapplication.PlaceBid">
+    tools:context="app.com.upadhyay.nilay.myapplication.UserInterface.PlaceBid">
     <ImageView
         android:id="@+id/iv_Userbackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <TextView style="@style/TextAppearance.AppCompat.Large"
+        android:text="Register Here"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/register" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:layout_marginBottom="25dp"
+            android:hint="Enter your Name"
+            android:maxLines="1"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            />
+
     <EditText
         android:id="@+id/editUsername"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginTop="220dp"
         android:layout_marginBottom="25dp"
-        android:hint="Enter your Username"
+        android:hint="Enter your email"
+        android:maxLines="1"
         android:textColorHint="@android:color/white"
-        android:maxLength="9"
         android:textColor="@android:color/white"
         />
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    <EditText
+        android:id="@+id/editPassword"
+        android:inputType="textPassword"
+        android:layout_below="@id/editUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="25dp"
-        android:layout_marginLeft="84dp"
-    android:id="@+id/radioTrader"
-        android:layout_below="@id/editUsername">
-    <RadioButton android:id="@+id/driver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Driver"
-        android:textColor="@android:color/white"/>
-    <RadioButton android:id="@+id/passenger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Passenger"
-        android:textColor="@android:color/white"/>
-    </RadioGroup>
+        android:hint="Enter your Password"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:maxLines="1"
+        />
     <Button
         android:id="@+id/buttonUserInfo"
         android:layout_width="wrap_content"
@@ -47,15 +67,23 @@
         android:textAllCaps="false"
         android:textSize="@dimen/btn_add_font_size"
         android:background="@drawable/bg_btn_add_it"
-        android:paddingLeft="@dimen/vertical_padding"
-        android:paddingRight="@dimen/vertical_padding"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:paddingTop="@dimen/horizontal_padding"
         android:paddingBottom="@dimen/horizontal_padding"
         android:fontFamily="sans-serif-thin"
         android:textColor="@color/btn_add_color"
         android:text="Register"
-        android:layout_below="@id/radioTrader"
+        android:layout_below="@id/editPassword"
         android:layout_centerHorizontal="true"
         />
+    <TextView
+        android:text="Already Registered? Sign in here"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/textViewSignIn"
+        android:textColor="@android:color/white"/>
 </RelativeLayout>
-

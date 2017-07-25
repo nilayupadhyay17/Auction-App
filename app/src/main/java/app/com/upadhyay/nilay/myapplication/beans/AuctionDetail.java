@@ -13,12 +13,14 @@ public class AuctionDetail extends RealmObject {
     String ID;
     Long startTime;
     Long endTime;
+    String name;
     String elapsed;
     //Date date;
-    public AuctionDetail(String id, Long startTime,Long endTime){
+    public AuctionDetail(String id, Long startTime,Long endTime,String name){
         this.ID = id;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.name = name;
     }
     public AuctionDetail(){}
     public String getId() {
@@ -51,7 +53,10 @@ public class AuctionDetail extends RealmObject {
         this.elapsed = elapsed;
     }
 
-/*    public Date getDate() {
+    public String getName() {return name;}
+
+    public void setName(String name) {this.name = name;}
+    /*    public Date getDate() {
         return date;
     }
 

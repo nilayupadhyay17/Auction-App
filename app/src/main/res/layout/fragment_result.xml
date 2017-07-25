@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.com.upadhyay.nilay.myapplication.UserInterface.PlaceBid">
+
+    <ImageView
+        android:id="@+id/iv_backgroundW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView style= "@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/pname" />
+    <TextView style= "@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/aname"
+        android:layout_below="@id/pname"/>
+    <TextView style= "@style/TextAppearance.AppCompat.Large"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/aname"
+        android:id="@+id/result" />
+</RelativeLayout>

@@ -15,4 +15,8 @@
     <dimen name="row_drop_padding">22dp</dimen>
     <dimen name="iv_drop_size">12dp</dimen>
     <dimen name="tv_what_horizontal_padding">22dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="logo_w_h">100dp</dimen>
+
 </resources>
