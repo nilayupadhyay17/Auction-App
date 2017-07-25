@@ -159,11 +159,13 @@ public class UserInformationFragment extends Fragment {
                                 throw task.getException();
                             } catch(FirebaseAuthWeakPasswordException e) {
                                 Log.e("Firebase Exception",e.getReason());
-                                Toast.makeText(getActivity(),"Password should be minimum  6 characters and 1 number",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(),e.getReason().toString(),Toast.LENGTH_SHORT).show();
                                 progressDialog.setMessage(" Invalid Credentials");
                             } catch(FirebaseAuthInvalidCredentialsException e) {
                                 progressDialog.setMessage(" Invalid Credentials");
+                                Toast.makeText(getActivity(),task.getException().getMessage().toString(),Toast.LENGTH_SHORT).show();
                             } catch(FirebaseAuthUserCollisionException e) {
+                                Toast.makeText(getActivity(),task.getException().getMessage().toString(),Toast.LENGTH_SHORT).show();
                                 progressDialog.setMessage(" User  exception...");
                             } catch(Exception e) {
                                 Log.e(TAG, e.getMessage());

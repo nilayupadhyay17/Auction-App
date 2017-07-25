@@ -26,7 +26,7 @@
         android:layout_marginRight="84dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="25dp"
-        android:hint="Enter your Username"
+        android:hint="Enter your Email"
         android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:layout_below="@id/Login"
