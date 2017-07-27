@@ -46,8 +46,6 @@ import static com.example.nilay.myapplication.backend.ofyService.ofy;
 
 public class AuctionServlet extends HttpServlet {
 
-
-    private static final Logger logger = Logger.getLogger(GCMMessagesEndpoint.class.getName());
     private static final String GCM_SEND_ENDPOINT = "https://fcm.googleapis.com/fcm/send";
     public static final String CONTENT_TYPE_JSON = "application/json";
     public static final String HEADER_AUTHORIZATION = "Authorization";
@@ -57,7 +55,7 @@ public class AuctionServlet extends HttpServlet {
     private static final String PARAM_JSON_PAYLOAD = "data";
     private static final String PARAM_TIME_TO_LIVE = "time_to_live";
     private static final int DEFAULT_LIST_LIMIT = 20;
-    List<RegistrationRecord> registrationRecord = null;
+
     List<AuctionTime> auctionTime = null;
     String[] tokenarray ;
     Long[] auctionarr;
@@ -70,10 +68,6 @@ public class AuctionServlet extends HttpServlet {
     private static String CLIENTID = "";
     private static final Logger LOG = Logger.getLogger(
             AuctionServlet.class.getName());
-    static {
-        // Typically you would register this inside an OfyServive wrapper. See: https://code.google.com/p/objectify-appengine/wiki/BestPractices
-        ObjectifyService.register(GCMMessages.class);
-    }
     @ApiMethod(name = "calculatewinners", path="auction")
     public void calculatewinners(@Named("auctionID") String auctionid) {
 
@@ -87,15 +81,6 @@ public class AuctionServlet extends HttpServlet {
 
         List<Auction> driverList = new ArrayList<Auction>();
         List<Auction> passengerList = new ArrayList<Auction>();
-
-
-        // System.out.print("key "+wd.getKey());
-        //System.out.print("key1 "+wd1.getKey());
-
-
-
-        // Iterable<Auction> regisDriver = ofyService.ofy().load().type(Auction.class).filter("userID =",wd.getKey());
-        // Iterable<Auction> regisPassenger = ofyService.ofy().load().type(Auction.class).filter("userID =",wd1.getKey());
         HashMap<String,ArrayList<String>> hmap= new HashMap<String,ArrayList<String>>();
         winner  = new JSONObject();
 
@@ -133,9 +118,6 @@ public class AuctionServlet extends HttpServlet {
         for(Map.Entry entry : sortedPMap.entrySet()){
             System.out.print("val1  "+entry.getValue());
         }
-        //System.out.println("sorted d "+sortedDMap.size());
-        //System.out.println("sorted P "+sortedPMap.size());
-
 
         Iterator<Map.Entry<String, Integer>> wd = sortedDMap.entrySet().iterator();
         Iterator<Map.Entry<String, Integer>> wd1 = sortedPMap.entrySet().iterator();
@@ -160,9 +142,6 @@ public class AuctionServlet extends HttpServlet {
 
                     System.out.println("dval 1 "+dval);
                     System.out.println("pval 1 "+pval);
-                    //if (!wd.hasNext() || !wd1.hasNext()) {
-                    //Map.Entry ldpairs = (Map.Entry) wd.next();
-                    //Map.Entry lppairs = (Map.Entry) wd1.next();
 
                     int low = Math.min(temppval, dval);
                     int high = Math.max(tempdval, pval);
@@ -199,18 +178,7 @@ public class AuctionServlet extends HttpServlet {
         }
         System.out.print("price"+price);
 
-       /* for(Map.Entry<String,Integer> entry : winnerDriver.entrySet()){
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            System.out.println(key);
-            System.out.println(value);
-        }
-        for(Map.Entry<String,Integer> entry : winnerPass.entrySet()){
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            System.out.println(key);
-            System.out.println(value);
-        }*/
+
         Iterator<Map.Entry<String, Integer>> wd2 = winnerDriver.entrySet().iterator();
         Iterator<Map.Entry<String, Integer>> wd3 = winnerPass.entrySet().iterator();
         while(wd2.hasNext()){
@@ -221,12 +189,6 @@ public class AuctionServlet extends HttpServlet {
             ArrayList<String> as= hmap.get(dpairs1.getKey());
             ArrayList<String> ap= hmap.get(ppairs1.getKey());
 
-            //String jon = new Gson().toJson(as);
-            // String jon1 = new Gson().toJson(ap);
-            // System.out.println(jon.toString()+""+jon1.toString());
-            // System.out.println(jon1);
-            // System.out.println(jon);
-            //for(String str: as){
             AuctionWinner auctionWinner = new AuctionWinner();
             //   System.out.println(str);
             auctionWinner.setAuctionID(as.get(0));
@@ -330,9 +292,7 @@ public class AuctionServlet extends HttpServlet {
             jsonBody = new JSONObject();
             jsonBody.put(PARAM_TO, tr);
             jsonBody.put("data", auctiondata);
-            //jsonBody.put("registration_ids", tokenarray);
-            // jsonBody.putOpt(PARAM_COLLAPSE_KEY, message.getCollapseKey());
-            // jsonBody.putOpt(PARAM_RESTRICTED_PACKAGE_NAME, message.getRestrictedPackageName());
+
         } catch (JSONException e) {
 
         }
@@ -367,8 +327,6 @@ public class AuctionServlet extends HttpServlet {
                 }
             }
         }
-        //  Log.i(LoggingService.LOG_TAG, "HTTP response. body: " + responseBody);
-
 
         System.out.println(" send messageend");
     }
@@ -381,9 +339,7 @@ public class AuctionServlet extends HttpServlet {
 
             jsonBody.put(PARAM_TO,tokenarray);
             jsonBody.put("data",auctiondata);
-            //jsonBody.put("registration_ids", tokenarray);
-            // jsonBody.putOpt(PARAM_COLLAPSE_KEY, message.getCollapseKey());
-            // jsonBody.putOpt(PARAM_RESTRICTED_PACKAGE_NAME, message.getRestrictedPackageName());
+
         }
         catch (JSONException e) {
             throw new IOException("Failed to build JSON body");
@@ -405,14 +361,8 @@ public class AuctionServlet extends HttpServlet {
                 ofy().save().entity(ad);
             }
         }
-         // auctionmap.put(Long.parseLong("5717648100818944"),"vhvg");
-        //auctionmap.put(Long.parseLong("6211283992969216"),"bbb");
         stopauction(auctionmap);
 
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 }
